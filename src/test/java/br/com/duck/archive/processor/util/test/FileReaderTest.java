@@ -14,9 +14,14 @@ public class FileReaderTest {
 	
 	
 	@Test
-	public void testReadFile() throws IOException{
+	public void testReadFile() throws IOException {
 		Stream<String> lines = fileReader.readFile("/home/tiago/bagacera.dat");
 		Assert.assertNotNull(lines);
 		Assert.assertTrue(lines.count() > 0);
+	}
+	
+	@Test(expected=IOException.class)
+	public void testReadFileThatNotExist() throws IOException{
+		Stream<String> lines = fileReader.readFile("/home/tiago/tijolo.dat");
 	}
 }

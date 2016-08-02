@@ -1,8 +1,22 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: "jacoco"
 
 compileJava {
 	sourceCompatibility = 1.8
+}
+
+jacoco {
+    toolVersion = "0.7.6.201602180812"
+    reportsDir = file("$buildDir/customJacocoReportDir")
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
 }
 
 version = '1.0'

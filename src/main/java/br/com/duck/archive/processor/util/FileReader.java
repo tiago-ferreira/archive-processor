@@ -11,9 +11,5 @@ public class FileReader {
 		return Files.lines(Paths.get(path));
 	}
 	
-	public static void main(String[] args) throws IOException{
-		FileReader reader = new FileReader();
-		Stream<String> lines = reader.readFile("/home/tiago/bagacera.dat");
-		lines.forEach(System.out::println);
-	}
+	
 }
