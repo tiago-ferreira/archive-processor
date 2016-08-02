@@ -11,5 +11,8 @@ public class FileReader {
 		return Files.lines(Paths.get(path));
 	}
 	
+	public Boolean isReadable(String path) {
+		return Files.isReadable(Paths.get(path));
+	}
 	
 }
