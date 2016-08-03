@@ -9,6 +9,19 @@ public class Customer {
 	private String name;
 	private String businessArea;
 
+	public Customer() {
+		super();
+	}
+
+	public Customer(LayoutType layout, String document, String name,
+			String businessArea) {
+		super();
+		this.layout = layout;
+		this.document = document;
+		this.name = name;
+		this.businessArea = businessArea;
+	}
+
 	public LayoutType layout() {
 		return layout;
 	}

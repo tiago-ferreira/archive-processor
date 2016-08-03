@@ -8,6 +8,17 @@ public class SalesItem {
 	private Integer numberOfItems;
 	private BigDecimal price;
 
+	public SalesItem() {
+		super();
+	}
+
+	public SalesItem(Long id, Integer numberOfItems, BigDecimal price) {
+		super();
+		this.id = id;
+		this.numberOfItems = numberOfItems;
+		this.price = price;
+	}
+
 	public Long id() {
 		return id;
 	}

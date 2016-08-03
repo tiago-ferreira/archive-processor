@@ -11,6 +11,19 @@ public class Salesman {
 	private String name;
 	private BigDecimal salary;
 
+	public Salesman() {
+		super();
+	}
+
+	public Salesman(LayoutType layout, String document, String name,
+			BigDecimal salary) {
+		super();
+		this.layout = layout;
+		this.document = document;
+		this.name = name;
+		this.salary = salary;
+	}
+
 	public LayoutType layout() {
 		return layout;
 	}
