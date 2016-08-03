@@ -9,36 +9,40 @@ public class Customer {
 	private String name;
 	private String businessArea;
 
-	public LayoutType getLayout() {
+	public LayoutType layout() {
 		return layout;
 	}
 
-	public void setLayout(LayoutType layout) {
+	public Customer layout(LayoutType layout) {
 		this.layout = layout;
+		return this;
 	}
 
-	public String getDocument() {
+	public String document() {
 		return document;
 	}
 
-	public void setDocument(String document) {
+	public Customer document(String document) {
 		this.document = document;
+		return this;
 	}
 
-	public String getName() {
+	public String name() {
 		return name;
 	}
 
-	public void setName(String name) {
+	public Customer name(String name) {
 		this.name = name;
+		return this;
 	}
 
-	public String getBusinessArea() {
+	public String businessArea() {
 		return businessArea;
 	}
 
-	public void setBusinessArea(String businessArea) {
+	public Customer businessArea(String businessArea) {
 		this.businessArea = businessArea;
+		return this;
 	}
 
 }

@@ -8,28 +8,31 @@ public class SalesItem {
 	private Integer numberOfItems;
 	private BigDecimal price;
 
-	public Long getId() {
+	public Long id() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public SalesItem id(Long id) {
 		this.id = id;
+		return this;
 	}
 
-	public Integer getNumberOfItems() {
+	public Integer numberOfItems() {
 		return numberOfItems;
 	}
 
-	public void setNumberOfItems(Integer numberOfItems) {
+	public SalesItem numberOfItems(Integer numberOfItems) {
 		this.numberOfItems = numberOfItems;
+		return this;
 	}
 
-	public BigDecimal getPrice() {
+	public BigDecimal price() {
 		return price;
 	}
 
-	public void setPrice(BigDecimal price) {
+	public SalesItem price(BigDecimal price) {
 		this.price = price;
+		return this;
 	}
 
 }

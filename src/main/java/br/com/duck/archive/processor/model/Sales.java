@@ -9,36 +9,40 @@ public class Sales {
 	private SalesItem salesItem;
 	private Salesman salesman;
 
-	public LayoutType getLayout() {
+	public LayoutType layout() {
 		return layout;
 	}
 
-	public void setLayout(LayoutType layout) {
+	public Sales layout(LayoutType layout) {
 		this.layout = layout;
+		return this;
 	}
 
-	public Long getId() {
+	public Long id() {
 		return Id;
 	}
 
-	public void setId(Long id) {
+	public Sales id(Long id) {
 		Id = id;
+		return this;
 	}
 
-	public SalesItem getSalesItem() {
+	public SalesItem salesItem() {
 		return salesItem;
 	}
 
-	public void setSalesItem(SalesItem salesItem) {
+	public Sales salesItem(SalesItem salesItem) {
 		this.salesItem = salesItem;
+		return this;
 	}
 
-	public Salesman getSalesman() {
+	public Salesman salesman() {
 		return salesman;
 	}
 
-	public void setSalesman(Salesman salesman) {
+	public Sales salesman(Salesman salesman) {
 		this.salesman = salesman;
+		return this;
 	}
 
 }

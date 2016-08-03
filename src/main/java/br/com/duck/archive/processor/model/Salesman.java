@@ -11,36 +11,40 @@ public class Salesman {
 	private String name;
 	private BigDecimal salary;
 
-	public LayoutType getLayout() {
+	public LayoutType layout() {
 		return layout;
 	}
 
-	public void setLayout(LayoutType layout) {
+	public Salesman layout(LayoutType layout) {
 		this.layout = layout;
+		return this;
 	}
 
-	public String getDocument() {
+	public String document() {
 		return document;
 	}
 
-	public void setDocument(String document) {
+	public Salesman document(String document) {
 		this.document = document;
+		return this;
 	}
 
-	public String getName() {
+	public String name() {
 		return name;
 	}
 
-	public void setName(String name) {
+	public Salesman name(String name) {
 		this.name = name;
+		return this;
 	}
 
-	public BigDecimal getSalary() {
+	public BigDecimal salary() {
 		return salary;
 	}
 
-	public void setSalary(BigDecimal salary) {
+	public Salesman salary(BigDecimal salary) {
 		this.salary = salary;
+		return this;
 	}
 
 }
