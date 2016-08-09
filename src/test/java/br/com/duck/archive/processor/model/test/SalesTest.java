@@ -5,7 +5,6 @@ import java.math.BigDecimal;
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.duck.archive.processor.model.Customer;
 import br.com.duck.archive.processor.model.Sales;
 import br.com.duck.archive.processor.model.SalesItem;
 import br.com.duck.archive.processor.model.Salesman;
