@@ -11,12 +11,14 @@ import br.com.duck.archive.processor.model.Sales;
 
 public class SalesDAOTest {
 	
+	SalesDAO salesDAO = new SalesDAO();
+	
 	@Test
 	public void testAddGet() {
-		SalesDAO.add(new Sales());
-		SalesDAO.add(new Sales());
-		SalesDAO.add(new Sales());
-		List<Sales> sales = SalesDAO.getSales();
+		salesDAO.add(new Sales());
+		salesDAO.add(new Sales());
+		salesDAO.add(new Sales());
+		List<Sales> sales = salesDAO.getSales();
 		Assert.assertNotNull(sales);
 		Assert.assertTrue(sales.size() == 3);
 	}
