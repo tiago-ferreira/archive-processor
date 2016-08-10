@@ -21,5 +21,6 @@ public class SalesDAOTest {
 		List<Sales> sales = salesDAO.getSales();
 		Assert.assertNotNull(sales);
 		Assert.assertTrue(sales.size() == 3);
+		Assert.assertTrue(sales == salesDAO.getSales());
 	}
 }
