@@ -22,7 +22,7 @@ public class FileReaderTest {
 	
 	@Test(expected=IOException.class)
 	public void testReadFileThatNotExist() throws IOException{
-		Stream<String> lines = fileReader.readFile("/home/tiago/tijolo.dat");
+		fileReader.readFile("/home/tiago/tijolo.dat");
 	}
 	
 	@Test
