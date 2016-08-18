@@ -21,6 +21,14 @@ public class Customer {
 		this.name = name;
 		this.businessArea = businessArea;
 	}
+	
+	   public Customer(String document, String name,
+	            String businessArea) {
+	        super();
+	        this.document = document;
+	        this.name = name;
+	        this.businessArea = businessArea;
+	    }
 
 	public LayoutType layout() {
 		return layout;

@@ -11,7 +11,7 @@ public class FileProcessor {
 	
 	public void startProcess() {
 		try {
-			Stream<String> contentsOfFile = fileReader.readFile("/home/tiago/bagacera.dat");
+			Stream<String> contentsOfFile = fileReader.readFile("bagacera.dat", true);
 			
 		} catch (IOException e) {
 			e.printStackTrace();

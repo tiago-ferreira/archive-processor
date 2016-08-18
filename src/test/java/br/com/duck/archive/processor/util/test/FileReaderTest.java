@@ -15,23 +15,23 @@ public class FileReaderTest {
 	
 	@Test
 	public void testReadFile() throws IOException {
-		Stream<String> lines = fileReader.readFile("/home/tiago/bagacera.dat");
+		Stream<String> lines = fileReader.readFile("bagacera.dat", true);
 		Assert.assertNotNull(lines);
 		Assert.assertTrue(lines.count() > 0);
 	}
 	
 	@Test(expected=IOException.class)
 	public void testReadFileThatNotExist() throws IOException{
-		fileReader.readFile("/home/tiago/tijolo.dat");
+		fileReader.readFile("tijolo.dat", false);
 	}
 	
 	@Test
 	public void testIsReadable() {
-		Assert.assertTrue(fileReader.isReadable("/home/tiago/bagacera.dat"));
+		Assert.assertTrue(fileReader.isReadable("/home"));
 	}
 	
 	@Test
 	public void testIsNotReadable() {
-		Assert.assertTrue(fileReader.isReadable("/etc"));
+		Assert.assertFalse(fileReader.isReadable("/etc/cavera"));
 	}
 }
