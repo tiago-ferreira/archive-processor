@@ -28,6 +28,7 @@ public class Salesman {
 	        super();
 	        this.document = document;
 	        this.name = name;
+	        this.salary = salary;
     }
     
     public LayoutType layout() {
