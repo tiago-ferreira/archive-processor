@@ -48,4 +48,16 @@ public class SalesItemConverterTest {
 	        Assert.assertEquals(expResult.numberOfItems(), result.numberOfItems());
 	        Assert.assertEquals(expResult.price(), result.price());
 	    }
+	    
+	    @Test
+	    public void testConverter() {
+	        System.out.println("convertStringInSalesItem");
+	        String value = "1-10-100";
+	        SalesItemConverter instance = new SalesItemConverter();
+	        SalesItem expResult =new SalesItem(1L, 10, new BigDecimal(100));
+	        SalesItem result = instance.converter(value);
+	        Assert.assertEquals(expResult.id(), result.id());
+	        Assert.assertEquals(expResult.numberOfItems(), result.numberOfItems());
+	        Assert.assertEquals(expResult.price(), result.price());
+	    }
 }
