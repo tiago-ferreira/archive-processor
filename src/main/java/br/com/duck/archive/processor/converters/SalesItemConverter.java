@@ -13,14 +13,19 @@ public class SalesItemConverter implements LineConverter<SalesItem> {
 	private List<SalesItem> SalesItems = new ArrayList<>();
 
 	public List<SalesItem> convertStringInSalesItems(String value) {
-		String valueFormatted = value.replace("[", "").replace("]", "");
-		StringTokenizer st = new StringTokenizer(valueFormatted, ",");
+		StringTokenizer st = convertStringInToken(value);
 		while (st.hasMoreElements()) {
 			SalesItem it = new SalesItem();
 			it = convertStringInSalesItem(st.nextElement().toString());
 			SalesItems.add(it);
 		}
 		return SalesItems;
+	}
+
+	private StringTokenizer convertStringInToken(String value) {
+		String valueFormatted = value.replace("[", "").replace("]", "");
+		StringTokenizer st = new StringTokenizer(valueFormatted, ",");
+		return st;
 	}
 
 	public SalesItem convertStringInSalesItem(String value) {
@@ -37,7 +42,7 @@ public class SalesItemConverter implements LineConverter<SalesItem> {
 	}
 
 	@Override
-	public br.com.duck.archive.processor.model.SalesItem converter(String line) {
+	public SalesItem converter(String line) {
 		return convertStringInSalesItem(line);
 	}
 }
