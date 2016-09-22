@@ -9,17 +9,17 @@ import br.com.duck.archive.processor.model.SalesItem;
 
 public class SalesItemConverter implements LineConverter<SalesItem> {
 
-	private SalesItem SalesItem = new SalesItem();
-	private List<SalesItem> SalesItems = new ArrayList<>();
+	private SalesItem salesItem = new SalesItem();
+	private List<SalesItem> salesItems = new ArrayList<>();
 
 	public List<SalesItem> convertStringInSalesItems(String value) {
 		StringTokenizer st = convertStringInToken(value);
 		while (st.hasMoreElements()) {
 			SalesItem it = new SalesItem();
 			it = convertStringInSalesItem(st.nextElement().toString());
-			SalesItems.add(it);
+			salesItems.add(it);
 		}
-		return SalesItems;
+		return salesItems;
 	}
 
 	private StringTokenizer convertStringInToken(String value) {
@@ -36,9 +36,9 @@ public class SalesItemConverter implements LineConverter<SalesItem> {
 			Integer numbersOfSalesItem = Integer.parseInt(st.nextElement()
 					.toString());
 			BigDecimal price = new BigDecimal(st.nextElement().toString());
-			SalesItem = new SalesItem(id, numbersOfSalesItem, price);
+			salesItem = new SalesItem(id, numbersOfSalesItem, price);
 		}
-		return SalesItem;
+		return salesItem;
 	}
 
 	@Override
