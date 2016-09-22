@@ -1,14 +1,27 @@
 package br.com.duck.archive.processor.model;
 
+import java.util.List;
+
 import br.com.duck.archive.processor.types.LayoutType;
 
 public class Sales {
 
 	private LayoutType layout;
 	private Long Id;
-	private SalesItem salesItem;
+	private List<SalesItem> salesItem;
 	private Salesman salesman;
 
+	public Sales(){
+	}
+	
+	public Sales(Long id, List<SalesItem> salesItem, Salesman salesman) {
+		super();
+		Id = id;
+		this.salesItem = salesItem;
+		this.salesman = salesman;
+	}
+	
+	
 	public LayoutType layout() {
 		return layout;
 	}
@@ -27,11 +40,11 @@ public class Sales {
 		return this;
 	}
 
-	public SalesItem salesItem() {
+	public List<SalesItem> salesItem() {
 		return salesItem;
 	}
 
-	public Sales salesItem(SalesItem salesItem) {
+	public Sales salesItem(List<SalesItem> salesItem) {
 		this.salesItem = salesItem;
 		return this;
 	}

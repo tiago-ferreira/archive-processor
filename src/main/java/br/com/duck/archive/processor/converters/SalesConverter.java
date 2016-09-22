@@ -1,13 +1,25 @@
 package br.com.duck.archive.processor.converters;
 
+import java.util.List;
+import java.util.StringTokenizer;
+
 import br.com.duck.archive.processor.model.Sales;
+import br.com.duck.archive.processor.model.SalesItem;
 
 public class SalesConverter implements LineConverter<Sales>{
 
-    @Override
-    public Sales converter(String line) {
-        // TODO Auto-generated method stub
-        return null;
-    }
+	    private Sales sales = new Sales();
+	    private SalesItemConverter salesItemConverter = new SalesItemConverter();
+
+	    public Sales converter(String value) {
+	        StringTokenizer st = new StringTokenizer(value, "ç");
+	        while (st.hasMoreElements()) {
+	            Long id = Long.parseLong(st.nextElement().toString());
+	            List<SalesItem> items = salesItemConverter.convertStringInSalesItems(st.nextElement().toString());
+	            String salesmanName = st.nextElement().toString();
+	            //sales = new Sales(id, items, salesmanName);
+	        }
+	        return sales;
+	    }
 
 }

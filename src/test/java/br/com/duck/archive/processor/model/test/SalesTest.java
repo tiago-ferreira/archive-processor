@@ -26,12 +26,12 @@ public class SalesTest {
 		Assert.assertTrue(sales.id() == 1L);
 	}
 	
-	@Test
-	public void testSalesmanItem() {
-		SalesItem salesItem = new SalesItem(1L, 10, new BigDecimal(1.99));
-		sales.salesItem(salesItem);
-		Assert.assertEquals(salesItem, sales.salesItem());
-	}
+//	@Test
+//	public void testSalesmanItem() {
+//		SalesItem salesItem = new SalesItem(1L, 10, new BigDecimal(1.99));
+//		sales.salesItem(salesItem);
+//		Assert.assertEquals(salesItem, sales.salesItem());
+//	}
 	
 	@Test
 	public void testCustomer() {
