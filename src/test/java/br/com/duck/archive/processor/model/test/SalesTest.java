@@ -1,6 +1,7 @@
 package br.com.duck.archive.processor.model.test;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -26,12 +27,12 @@ public class SalesTest {
 		Assert.assertTrue(sales.id() == 1L);
 	}
 	
-//	@Test
-//	public void testSalesmanItem() {
-//		SalesItem salesItem = new SalesItem(1L, 10, new BigDecimal(1.99));
-//		sales.salesItem(salesItem);
-//		Assert.assertEquals(salesItem, sales.salesItem());
-//	}
+	@Test
+	public void testSalesmanItem() {
+		SalesItem salesItem = new SalesItem(1L, 10, new BigDecimal(1.99));
+		sales.salesItem(Arrays.asList(salesItem));
+		Assert.assertEquals(salesItem, sales.salesItem().get(0));
+	}
 	
 	@Test
 	public void testCustomer() {

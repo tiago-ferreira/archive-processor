@@ -5,6 +5,7 @@ import java.util.StringTokenizer;
 
 import br.com.duck.archive.processor.model.Sales;
 import br.com.duck.archive.processor.model.SalesItem;
+import br.com.duck.archive.processor.model.Salesman;
 
 public class SalesConverter implements LineConverter<Sales>{
 
@@ -17,7 +18,7 @@ public class SalesConverter implements LineConverter<Sales>{
 	            Long id = Long.parseLong(st.nextElement().toString());
 	            List<SalesItem> items = salesItemConverter.convertStringInSalesItems(st.nextElement().toString());
 	            String salesmanName = st.nextElement().toString();
-	            //sales = new Sales(id, items, salesmanName);
+	            sales = new Sales(id, items, new Salesman(salesmanName));
 	        }
 	        return sales;
 	    }

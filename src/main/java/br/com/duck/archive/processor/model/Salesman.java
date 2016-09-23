@@ -31,7 +31,11 @@ public class Salesman {
 	        this.salary = salary;
     }
     
-    public LayoutType layout() {
+    public Salesman(String name) {
+    	this.name = name;
+	}
+
+	public LayoutType layout() {
         return layout;
     }
 
