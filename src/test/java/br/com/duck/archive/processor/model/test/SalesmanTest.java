@@ -37,9 +37,17 @@ public class SalesmanTest {
 	}
 	
 	@Test
-	public void testSalesmanConstructor() {
+	public void testSalesmanConstructorWithFourParameters() {
 		salesman = new Salesman(LayoutType.SALESMAN, "19231673581212", "Josias", new BigDecimal(6000));
 		Assert.assertEquals(salesman.layout(), LayoutType.SALESMAN);
+		Assert.assertEquals(salesman.document(), "19231673581212");
+		Assert.assertEquals(salesman.name(), "Josias");
+		Assert.assertEquals(salesman.salary(), new BigDecimal(6000));
+	}
+	
+	@Test
+	public void testSalesmanConstructorWithThreeParameters() {
+		salesman = new Salesman("19231673581212", "Josias", new BigDecimal(6000));
 		Assert.assertEquals(salesman.document(), "19231673581212");
 		Assert.assertEquals(salesman.name(), "Josias");
 		Assert.assertEquals(salesman.salary(), new BigDecimal(6000));
