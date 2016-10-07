@@ -9,16 +9,14 @@ import br.com.duck.archive.processor.model.Salesman;
 
 public class SalesmanDAOTest {
 
-	private SalesmanDAO salesmanDAO = new SalesmanDAO();
-	
 	@Test
 	public void testAddGet() {
-		salesmanDAO.add(new Salesman());
-		salesmanDAO.add(new Salesman());
-		salesmanDAO.add(new Salesman());
-		List<Salesman> salesmans = salesmanDAO.getSalesmans();
+		SalesmanDAO.add(new Salesman());
+		SalesmanDAO.add(new Salesman());
+		SalesmanDAO.add(new Salesman());
+		List<Salesman> salesmans = SalesmanDAO.getSalesmans();
 		Assert.assertNotNull(salesmans);
 		Assert.assertTrue(salesmans.size() == 3);
-		Assert.assertTrue(salesmans == salesmanDAO.getSalesmans());
+		Assert.assertTrue(salesmans == SalesmanDAO.getSalesmans());
 	}
 }

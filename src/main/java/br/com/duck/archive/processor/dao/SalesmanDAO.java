@@ -7,13 +7,13 @@ import br.com.duck.archive.processor.model.Salesman;
 
 public class SalesmanDAO {
 
-	private List<Salesman> salesmans = new CopyOnWriteArrayList<>();
+	private static List<Salesman> salesmans = new CopyOnWriteArrayList<>();
 
-	public void add(Salesman salesman) {
+	public static void add(Salesman salesman) {
 		salesmans.add(salesman);
 	}
 
-	public List<Salesman> getSalesmans() {
+	public static List<Salesman> getSalesmans() {
 		return salesmans;
 	}
 }
