@@ -36,4 +36,10 @@ public class SalesItemTest {
 		Assert.assertTrue(salesItem.numberOfItems() == 10);
 		Assert.assertEquals(new BigDecimal(1.99), salesItem.price());
 	}
+	
+	@Test
+	public void testTotalSalesItems() {
+		salesItem = new SalesItem(1L, 10, new BigDecimal(2.0));
+		Assert.assertEquals(new BigDecimal(20.00), salesItem.totalOfItems());
+	}
 }
