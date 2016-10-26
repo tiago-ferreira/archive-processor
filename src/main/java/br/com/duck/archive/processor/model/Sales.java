@@ -1,5 +1,6 @@
 package br.com.duck.archive.processor.model;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import br.com.duck.archive.processor.types.LayoutType;
@@ -56,6 +57,14 @@ public class Sales {
 	public Sales salesman(Salesman salesman) {
 		this.salesman = salesman;
 		return this;
+	}
+
+	public BigDecimal getTotalOfSale() {
+		BigDecimal total = new BigDecimal(0);
+		for (SalesItem sa : this.salesItem) {
+			total.add(total.add(sa.totalOfItems()));
+		}
+		return total;
 	}
 
 }

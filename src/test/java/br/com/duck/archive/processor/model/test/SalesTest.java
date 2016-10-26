@@ -50,5 +50,12 @@ public class SalesTest {
 		Assert.assertEquals(salesman, sales.salesman());
 	}
 	
+	@Test
+	public void testTotalOfSale() {
+		SalesItem salesItem1 = new SalesItem(1L, 10, new BigDecimal(2.00));
+		SalesItem salesItem2 = new SalesItem(1L, 3, new BigDecimal(5.00));
+		Sales s = new Sales(1L, Arrays.asList(salesItem1, salesItem2), new Salesman("Tiago"));
+		Assert.assertEquals(new BigDecimal(35.00), s.getTotalOfSale());
+	}
 	
 }
