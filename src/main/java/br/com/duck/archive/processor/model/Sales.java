@@ -62,7 +62,8 @@ public class Sales {
 	public BigDecimal getTotalOfSale() {
 		BigDecimal total = new BigDecimal(0);
 		for (SalesItem sa : this.salesItem) {
-			total.add(total.add(sa.totalOfItems()));
+			BigDecimal to = sa.totalOfItems();
+			total = total.add(to);
 		}
 		return total;
 	}
