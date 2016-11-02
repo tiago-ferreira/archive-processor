@@ -71,4 +71,11 @@ public class Salesman {
         return this;
     }
 
+	@Override
+	public String toString() {
+		return "Salesman [layout=" + layout + ", document=" + document
+				+ ", name=" + name + ", salary=" + salary + "]";
+	}
+
+    
 }

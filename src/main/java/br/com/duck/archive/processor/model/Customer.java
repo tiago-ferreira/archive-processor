@@ -66,4 +66,11 @@ public class Customer {
 		return this;
 	}
 
+	@Override
+	public String toString() {
+		return "Customer [layout=" + layout + ", document=" + document
+				+ ", name=" + name + ", businessArea=" + businessArea + "]";
+	}
+
+	
 }

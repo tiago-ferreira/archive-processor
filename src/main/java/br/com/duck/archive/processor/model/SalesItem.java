@@ -7,7 +7,6 @@ public class SalesItem {
 	private Long id;
 	private Integer numberOfItems;
 	private BigDecimal price;
-	private BigDecimal totalOfItems = new BigDecimal(0);
 
 	public SalesItem() {
 		super();
@@ -50,4 +49,12 @@ public class SalesItem {
 	public BigDecimal totalOfItems() {
 		return price.multiply(new BigDecimal(numberOfItems));
 	}
+
+	@Override
+	public String toString() {
+		return "SalesItem [id=" + id + ", numberOfItems=" + numberOfItems
+				+ ", price=" + price + ", totalOfItems=" + totalOfItems() + "]";
+	}
+	
+	
 }

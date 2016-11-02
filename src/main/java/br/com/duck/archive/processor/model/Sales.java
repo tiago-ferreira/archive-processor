@@ -68,4 +68,12 @@ public class Sales {
 		return total;
 	}
 
+	@Override
+	public String toString() {
+		return "Sales [layout=" + layout + ", Id=" + Id + ", salesItem="
+				+ salesItem + ", salesman=" + salesman + ", getTotalOfSale()="
+				+ getTotalOfSale() + "]";
+	}
+
+	
 }
