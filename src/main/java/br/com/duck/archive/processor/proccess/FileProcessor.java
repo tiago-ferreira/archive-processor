@@ -1,6 +1,7 @@
 package br.com.duck.archive.processor.proccess;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.stream.Stream;
 
 import br.com.duck.archive.processor.business.SalesBusiness;
@@ -18,7 +19,9 @@ public class FileProcessor {
 			Stream<String> contentsOfFile = fileReader.readFile("bagacera.dat", true);
 			contentsOfFile.forEach( a -> converter.selectConverter(a));
 			Sales mostExpensiveSale = SalesBusiness.getMostExpensiveSale();
+			BigDecimal amountOfSales = SalesBusiness.amountOfSales();
 			System.out.println(mostExpensiveSale);
+			System.out.println(amountOfSales);
 			
 		} catch (IOException e) {
 			e.printStackTrace();

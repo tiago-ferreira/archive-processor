@@ -1,15 +1,18 @@
 package br.com.duck.archive.processor.business;
 
+import java.math.BigDecimal;
+
 import br.com.duck.archive.processor.dao.SalesDAO;
+import br.com.duck.archive.processor.dao.SalesmanDAO;
 import br.com.duck.archive.processor.model.Sales;
 import br.com.duck.archive.processor.model.Salesman;
 
 public class SalesBusiness {
 
 	public Salesman worseSalesmanEver() {
-		Salesman toReturn = null;
-		
-		return toReturn;
+        Salesman worseSalesman = SalesmanDAO.getSalesmans().get(0);
+
+        return worseSalesman;
 	}
 	
 	
@@ -23,4 +26,13 @@ public class SalesBusiness {
         }
         return maior;
     }
+    
+    public static BigDecimal amountOfSales() {
+    	BigDecimal amountOfSales = new BigDecimal(0);
+    	for (Sales sales : SalesDAO.getSales()) {
+    		amountOfSales = amountOfSales.add(sales.getTotalOfSale());
+		}
+    	return amountOfSales;
+    }
+    
 }
