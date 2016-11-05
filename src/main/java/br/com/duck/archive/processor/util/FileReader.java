@@ -11,11 +11,13 @@ public class FileReader {
 	public Stream<String> readFile(String path, boolean isClasspath) throws IOException{
 	    if(isClasspath) {
 	        try {
-                return Files.lines(
+	        	System.out.println("Classpath");
+	        	return Files.lines(
                         Paths.get(getClass().getClassLoader()
                             .getResource(path)
                             .toURI())
                         );
+                
             } catch (URISyntaxException e) {
                 e.printStackTrace();
             }

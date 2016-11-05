@@ -55,6 +55,7 @@ public class SalesBusiness {
     public static BigDecimal amountOfSales() {
     	BigDecimal amountOfSales = new BigDecimal(0);
     	for (Sales sales : SalesDAO.getSales()) {
+    		System.out.println("Salesman: "+sales.salesman().name()+", total= "+sales.getTotalOfSale());
     		amountOfSales = amountOfSales.add(sales.getTotalOfSale());
 		}
     	return amountOfSales;
