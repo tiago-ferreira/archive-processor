@@ -1,6 +1,9 @@
 package br.com.duck.archive.processor.business;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import br.com.duck.archive.processor.dao.SalesDAO;
 import br.com.duck.archive.processor.dao.SalesmanDAO;
@@ -9,17 +12,39 @@ import br.com.duck.archive.processor.model.Salesman;
 
 public class SalesBusiness {
 
-	public Salesman worseSalesmanEver() {
-        Salesman worseSalesman = SalesmanDAO.getSalesmans().get(0);
-
+	public static Salesman worseSalesmanEver() {
+        Salesman worseSalesman = null;
+        Map<Salesman,BigDecimal> salesmanSales = new HashMap<>();
+        
+        for (Salesman salesman : SalesmanDAO.getSalesmans()) {
+        	BigDecimal totalSalesBySalesman = new BigDecimal(0);			
+        	for(Sales sales : SalesDAO.getSales()) {
+        		if(sales.salesman().name().equals(salesman.name())) {
+        			totalSalesBySalesman = totalSalesBySalesman.add(sales.getTotalOfSale());
+        		}
+        	}
+        	salesmanSales.put(salesman, totalSalesBySalesman);
+		}
+        worseSalesman = getWorseSalesmanEver(salesmanSales);
         return worseSalesman;
 	}
 	
 	
-    public static Sales getMostExpensiveSale(){
+    private static Salesman getWorseSalesmanEver(Map<Salesman, BigDecimal> salesmanSales) {
+    	BigDecimal keyToReturn =  salesmanSales.entrySet().iterator().next().getValue();
+    	Salesman toReturn = salesmanSales.entrySet().iterator().next().getKey();
+    	for (Entry<Salesman, BigDecimal> sa : salesmanSales.entrySet()) {
+			if(keyToReturn.compareTo(sa.getValue()) > 0) {
+				toReturn = sa.getKey();
+			}
+		}
+		return toReturn;
+	}
+
+
+	public static Sales getMostExpensiveSale(){
         Sales maior = SalesDAO.getSales().get(0);
         for (Sales sales : SalesDAO.getSales()) {
-            System.out.println("Id.: "+sales.id()+" Total of Sale.: "+sales.getTotalOfSale());
             if(sales.getTotalOfSale().compareTo(maior.getTotalOfSale()) > 0){
                 maior = sales;
             }

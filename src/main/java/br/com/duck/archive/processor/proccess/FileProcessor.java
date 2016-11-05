@@ -8,6 +8,7 @@ import br.com.duck.archive.processor.business.SalesBusiness;
 import br.com.duck.archive.processor.dao.CustomerDAO;
 import br.com.duck.archive.processor.dao.SalesmanDAO;
 import br.com.duck.archive.processor.model.Sales;
+import br.com.duck.archive.processor.model.Salesman;
 import br.com.duck.archive.processor.util.ConverterSelector;
 import br.com.duck.archive.processor.util.FileReader;
 
@@ -22,6 +23,8 @@ public class FileProcessor {
 			contentsOfFile.forEach( a -> converter.selectConverter(a));
 			Sales mostExpensiveSale = SalesBusiness.getMostExpensiveSale();
 			BigDecimal amountOfSales = SalesBusiness.amountOfSales();
+			Salesman worseSalesmanEver = SalesBusiness.worseSalesmanEver();
+			System.out.println(worseSalesmanEver);
 			System.out.println(mostExpensiveSale);
 			System.out.println(amountOfSales);
 			System.out.println(CustomerDAO.getCustomers().size());
