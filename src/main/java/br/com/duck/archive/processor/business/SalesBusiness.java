@@ -34,7 +34,7 @@ public class SalesBusiness {
     	BigDecimal keyToReturn =  salesmanSales.entrySet().iterator().next().getValue();
     	Salesman toReturn = salesmanSales.entrySet().iterator().next().getKey();
     	for (Entry<Salesman, BigDecimal> sa : salesmanSales.entrySet()) {
-			if(keyToReturn.compareTo(sa.getValue()) > 0) {
+			if(sa.getValue().compareTo(keyToReturn) > 0) {
 				toReturn = sa.getKey();
 			}
 		}
