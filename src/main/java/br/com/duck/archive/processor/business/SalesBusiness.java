@@ -33,7 +33,15 @@ public class SalesBusiness {
     private static Salesman getWorseSalesmanEver(Map<Salesman, BigDecimal> salesmanSales) {
     	BigDecimal keyToReturn =  salesmanSales.entrySet().iterator().next().getValue();
     	Salesman toReturn = salesmanSales.entrySet().iterator().next().getKey();
-    	for (Entry<Salesman, BigDecimal> sa : salesmanSales.entrySet()) {
+    	toReturn = iterateSales(salesmanSales, keyToReturn, toReturn);
+		return toReturn;
+	}
+
+
+	private static Salesman iterateSales(
+			Map<Salesman, BigDecimal> salesmanSales, BigDecimal keyToReturn,
+			Salesman toReturn) {
+		for (Entry<Salesman, BigDecimal> sa : salesmanSales.entrySet()) {
 			if(sa.getValue().compareTo(keyToReturn) > 0) {
 				toReturn = sa.getKey();
 			}
