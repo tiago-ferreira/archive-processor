@@ -17,16 +17,22 @@ public class SalesBusiness {
         Map<Salesman,BigDecimal> salesmanSales = new HashMap<>();
         
         for (Salesman salesman : SalesmanDAO.getSalesmans()) {
-        	BigDecimal totalSalesBySalesman = new BigDecimal(0);			
-        	for(Sales sales : SalesDAO.getSales()) {
-        		if(sales.salesman().name().equals(salesman.name())) {
-        			totalSalesBySalesman = totalSalesBySalesman.add(sales.getTotalOfSale());
-        		}
-        	}
+        	BigDecimal totalSalesBySalesman = iterateSalesSalesman(salesman);
         	salesmanSales.put(salesman, totalSalesBySalesman);
 		}
         worseSalesman = getWorseSalesmanEver(salesmanSales);
         return worseSalesman;
+	}
+
+
+	private static BigDecimal iterateSalesSalesman(Salesman salesman) {
+		BigDecimal totalSalesBySalesman = new BigDecimal(0);			
+		for(Sales sales : SalesDAO.getSales()) {
+			if(sales.salesman().name().equals(salesman.name())) {
+				totalSalesBySalesman = totalSalesBySalesman.add(sales.getTotalOfSale());
+			}
+		}
+		return totalSalesBySalesman;
 	}
 	
 	
